@@ -108,4 +108,4 @@ shape = SubResource("CircleShape2D_wob70")
 scale = Vector2(0.164063, 0.164063)
 sprite_frames = SubResource("SpriteFrames_cjsnc")
 animation = &"run"
-frame_progress = 0.619992
+frame_progress = 0.13493

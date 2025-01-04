@@ -18,7 +18,9 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		print("jump vel: " + str(velocity.y))
 		velocity.y = JUMP_VELOCITY
+		print("jump vel 2: " + str(velocity.y))
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -61,9 +63,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play("jump")
 
-	# Apply left/right movement stuffs
+	# left/right movement
 	if not is_being_pulled:
-		# speeeeed
 		if direction:
 			velocity.x = direction * SPEED
 			
@@ -76,6 +77,14 @@ func _physics_process(delta: float) -> void:
 	if vel_diff.length() > 250:
 		print("Ouch")
 		is_being_pulled = false
+		#for i in get_slide_collision_count():
+			#var collision = get_slide_collision(i)
+			#print("collider vel: " + str(collision.get_remainder()))
+			#velocity = prev_velocity.bounce(collision.get_normal())
+		
 	prev_velocity = velocity
 	set_floor_snap_length(0.0)
+	#var collision = move_and_collide(velocity * delta)
+	#if collision:
+	#	velocity = velocity.slide(collision.get_normal())
 	move_and_slide()
