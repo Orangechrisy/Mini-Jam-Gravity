@@ -4,6 +4,7 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
 const PULL_ACCELERATION = 700
 const GRAVITY := Vector2(0, 600)
+const acc : float = 20
 var is_being_pulled = false
 var pull_position: Vector2
 var prev_velocity: Vector2
@@ -38,7 +39,7 @@ func _physics_process(delta: float) -> void:
 			if result:
 				pull_position = result.position
 				#print(pull_position, mouse_coords)
-			is_being_pulled = true
+				is_being_pulled = true
 		else:
 			is_being_pulled = false
 			
@@ -64,12 +65,11 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("jump")
 
 	# left/right movement
-	if not is_being_pulled:
+	if not is_being_pulled and is_on_floor():
 		if direction:
-			velocity.x = direction * SPEED
-			
+			velocity.x = move_toward(velocity.x, direction * SPEED, acc)
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, acc)
 
 	# big change in velocity = death
 	var vel_diff: Vector2 = prev_velocity - velocity
