@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://lju7a3urcuia"]
+
+[ext_resource type="PackedScene" uid="uid://2dnrqlmk1j8f" path="res://Scenes/player.tscn" id="1_mrh0v"]
+[ext_resource type="PackedScene" uid="uid://d3tqp4mk83h51" path="res://Scenes/platform.tscn" id="2_j20c5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2kife"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_mrh0v")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 26)
+shape = SubResource("WorldBoundaryShape2D_2kife")
+
+[node name="Platforms_Walls" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms_Walls" instance=ExtResource("2_j20c5")]
+position = Vector2(220, -39)
+rotation = 1.5708
+
+[node name="Platform3" parent="Platforms_Walls" instance=ExtResource("2_j20c5")]
+position = Vector2(66, -163)
+
+[node name="Platform2" parent="Platforms_Walls" instance=ExtResource("2_j20c5")]
+position = Vector2(-193, -82)
+rotation = 1.5708

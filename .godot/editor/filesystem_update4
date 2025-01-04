@@ -1,0 +1,5 @@
+res://Scenes/player.tscn
+res://Scripts/player.gd
+res://Scenes/game.tscn
+res://Scenes/platform.tscn
+res://Scripts/platform.gd
