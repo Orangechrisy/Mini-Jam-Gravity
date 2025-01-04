@@ -1,14 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1735961153
+::res://::1736013751
 icon.svg::CompressedTexture2D::8886225858815929371::1735922605::1735922619::1::::<><>::
-::res://Assets/::1735968783
+::res://Assets/::1736024729
 Buildings.png::CompressedTexture2D::796319747479887420::1735957954::1735957955::1::::<><>::
+button test.png::CompressedTexture2D::2995000273492130140::1736024729::1736024734::1::::<><>::
 Player-Sprint-Test.png::CompressedTexture2D::8212683617475740012::1735962778::1735962782::1::::<><>::
 Props-01.png::CompressedTexture2D::140582504503883211::1735957951::1735957951::1::::<><>::
 rain_drop.png::CompressedTexture2D::4307797371817149598::1735968783::1735968791::1::::<><>::
 Tiles.png::CompressedTexture2D::7441749130345555504::1735957941::1735957945::1::::<><>::
-::res://Scenes/::1735967743
-game.tscn::PackedScene::791928209251232000::1735967743::0::1::::<><>::uid://2dnrqlmk1j8f::::res://Scenes/player.tscn<>uid://dea3rygnaj40c::::res://Assets/Tiles.png
-player.tscn::PackedScene::1902112448817473723::1735967743::0::1::::<><>::res://Scripts/player.gd<>uid://dpajx1m7ymfo3::::res://Assets/Player-Sprint-Test.png
-::res://Scripts/::1735967743
-player.gd::GDScript::-1::1735967743::0::1::::<>CharacterBody2D<>::
+::res://Scenes/::1736022620
+game.tscn::PackedScene::791928209251232000::1736022620::0::1::::<><>::uid://2dnrqlmk1j8f::::res://Scenes/player.tscn<>uid://b2my18dkp4xv7::::res://Assets/rain_drop.png<>res://Shaders/Rain.gdshader<>uid://dea3rygnaj40c::::res://Assets/Tiles.png
+player.tscn::PackedScene::1902112448817473723::1736022620::0::1::::<><>::res://Scripts/player.gd<>uid://dpajx1m7ymfo3::::res://Assets/Player-Sprint-Test.png
+main_menu.tscn::PackedScene::5124305825936558346::1736022620::0::1::::<><>::res://Scripts/main_menu.gd
+::res://Scripts/::1736013809
+player.gd::GDScript::-1::1736013728::0::1::::<>CharacterBody2D<>::
+main_menu.gd::GDScript::-1::1736013809::0::1::::<>CanvasLayer<>::
+::res://Shaders/::1735974947
+Rain.gdshader::Shader::-1::1735974947::0::1::::<><>::
+Rain.tres::VisualShader::6563911602576407859::1735974947::0::1::::<><>::

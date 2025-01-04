@@ -109,3 +109,12 @@ scale = Vector2(0.164063, 0.164063)
 sprite_frames = SubResource("SpriteFrames_cjsnc")
 animation = &"run"
 frame_progress = 0.13493
+
+[node name="hair timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="death reset timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="hair timer" to="." method="_on_hair_timer_timeout"]
+[connection signal="timeout" from="death reset timer" to="." method="_on_death_reset_timer_timeout"]

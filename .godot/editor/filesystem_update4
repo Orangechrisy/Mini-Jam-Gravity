@@ -3,3 +3,9 @@ res://Scripts/player.gd
 res://Scenes/game.tscn
 res://Scenes/platform.tscn
 res://Scripts/platform.gd
+res://Scripts/main_menu.gd
+res://Scenes/main_menu.tscn
+res://Shaders/button_glow.gdshader
+res://Scripts/pause_menu.gd
+res://Scenes/pause_menu.tscn
+res://Shaders/pause_menu.gdshader

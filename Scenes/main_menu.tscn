@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfaitk61wsc5w"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_0g2ui"]
+[ext_resource type="Shader" path="res://Shaders/button_glow.gdshader" id="2_7ydfa"]
+[ext_resource type="Texture2D" uid="uid://biw2hm1gth2jw" path="res://Assets/button test.png" id="3_eotg8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqvs7"]
+shader = ExtResource("2_7ydfa")
+shader_parameter/replace_color = Color(0.475, 0.086, 9.189, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_merno"]
+texture = ExtResource("3_eotg8")
+
+[node name="Main Menu" type="CanvasLayer"]
+script = ExtResource("1_0g2ui")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -102.0
+offset_right = 131.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+material = SubResource("ShaderMaterial_nqvs7")
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_merno")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_button_2_button_down"]
