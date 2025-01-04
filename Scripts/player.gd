@@ -2,23 +2,19 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
-const PULL_ACCELERATION = 250
+const PULL_ACCELERATION = 700
+const GRAVITY := Vector2(0, 600)
 var is_being_pulled = false
 var pull_position: Vector2
+var prev_velocity: Vector2
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	# Oof ouch hit my head
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var hit = collision.get_normal().dot(collision.get_travel())
-		if abs(hit) > .1:
-			print("OUCH")
-			# die
 	
 	# Add the gravity.
 	if not is_on_floor() and not is_being_pulled:
-		velocity += get_gravity() * delta
-		print(get_gravity())
+		velocity += GRAVITY * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -39,20 +35,47 @@ func _physics_process(delta: float) -> void:
 			var result = space_state.intersect_ray(query)
 			if result:
 				pull_position = result.position
-				print(pull_position, mouse_coords)
+				#print(pull_position, mouse_coords)
 			is_being_pulled = true
 		else:
 			is_being_pulled = false
 			
 	if is_being_pulled:
 		# set look_at for arm probs
+		print("pull vel: " + str(velocity))
 		velocity += global_position.direction_to(pull_position) * PULL_ACCELERATION * delta
+		print("pull vel 2: " + str(velocity))
 
-	# Apply left/right movement
+	# flipping
+	if direction > 0:
+		animated_sprite.flip_h = false
+	elif direction < 0:
+		animated_sprite.flip_h = true
+
+	# animes
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite.play("idle")
+		else:
+			animated_sprite.play("run")
+	else:
+		animated_sprite.play("jump")
+
+	# Apply left/right movement stuffs
 	if not is_being_pulled:
+		# speeeeed
 		if direction:
 			velocity.x = direction * SPEED
+			
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	# big change in velocity = death
+	var vel_diff: Vector2 = prev_velocity - velocity
+	print(str(prev_velocity.length()) + ", " + str(velocity.length()) + ", " + str(vel_diff.length()))
+	if vel_diff.length() > 250:
+		print("Ouch")
+		is_being_pulled = false
+	prev_velocity = velocity
+	set_floor_snap_length(0.0)
 	move_and_slide()

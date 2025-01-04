@@ -1,19 +1,101 @@
-[gd_scene load_steps=5 format=3 uid="uid://2dnrqlmk1j8f"]
+[gd_scene load_steps=17 format=3 uid="uid://2dnrqlmk1j8f"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g6ssg"]
-[ext_resource type="Texture2D" uid="uid://dyus3u5jrtbgd" path="res://icon.svg" id="2_24x1m"]
+[ext_resource type="Texture2D" uid="uid://dpajx1m7ymfo3" path="res://Assets/Player-Sprint-Test.png" id="2_ii20m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wob70"]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tphg8"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf5cy"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdsmo"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6pgn"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxsx5"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxbrx"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nr8v"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2arfy"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cetcj"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jparh"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbhkl"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxcm7"]
+atlas = ExtResource("2_ii20m")
+region = Rect2(704, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cjsnc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_24x1m")
+"texture": SubResource("AtlasTexture_tphg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf5cy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdsmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6pgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxsx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxbrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nr8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2arfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cetcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jparh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbhkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxcm7")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"run",
+"speed": 15.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -25,3 +107,5 @@ shape = SubResource("CircleShape2D_wob70")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.164063, 0.164063)
 sprite_frames = SubResource("SpriteFrames_cjsnc")
+animation = &"run"
+frame_progress = 0.619992
