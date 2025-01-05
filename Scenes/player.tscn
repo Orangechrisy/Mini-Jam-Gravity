@@ -1,7 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://2dnrqlmk1j8f"]
+[gd_scene load_steps=13 format=3 uid="uid://2dnrqlmk1j8f"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_g6ssg"]
-[ext_resource type="Texture2D" uid="uid://dpajx1m7ymfo3" path="res://Assets/Player-Sprint-Test.png" id="2_ii20m"]
 [ext_resource type="Texture2D" uid="uid://chgw2qkaamcp6" path="res://Assets/Gravity Game Player Sprite Sheet.png" id="3_5pc4p"]
 
 [sub_resource type="Animation" id="Animation_1xnvx"]
@@ -1337,98 +1336,6 @@ _data = {
 radius = 60.0
 height = 290.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tphg8"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lf5cy"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdsmo"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n6pgn"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxsx5"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hxbrx"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4nr8v"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2arfy"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cetcj"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jparh"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbhkl"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(640, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxcm7"]
-atlas = ExtResource("2_ii20m")
-region = Rect2(704, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cjsnc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tphg8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lf5cy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gdsmo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6pgn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yxsx5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hxbrx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4nr8v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2arfy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cetcj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jparh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbhkl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wxcm7")
-}],
-"loop": true,
-"name": &"run",
-"speed": 15.0
-}]
-
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_iw6l7"]
 target_nodepath = NodePath("../IK Targets/Front Hand")
 tip_nodepath = NodePath("Hip/Chest/Front Arm/Front Forearm/Tip")
@@ -1534,20 +1441,11 @@ autoplay = "Idle"
 position = Vector2(0, -145)
 shape = SubResource("CapsuleShape2D_yruqm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.164063, 0.164063)
-sprite_frames = SubResource("SpriteFrames_cjsnc")
-animation = &"run"
-frame_progress = 0.13493
-
 [node name="hair timer" type="Timer" parent="."]
 wait_time = 30.0
 
 [node name="death reset timer" type="Timer" parent="."]
 wait_time = 0.5
-
-[connection signal="timeout" from="hair timer" to="." method="_on_hair_timer_timeout"]
-[connection signal="timeout" from="death reset timer" to="." method="_on_death_reset_timer_timeout"]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 position = Vector2(-135, -226)
@@ -1666,7 +1564,6 @@ bone_angle = 77.838
 [node name="Tip" type="Node2D" parent="Skeleton2D/Hip/Chest/Front Arm/Front Forearm"]
 position = Vector2(3.00016, 48.0019)
 rotation = -0.925411
-scale = Vector2(1, 1)
 
 [node name="Back Arm" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
 position = Vector2(36.0007, -63.0013)
@@ -1695,7 +1592,6 @@ bone_angle = 103.784
 [node name="Back Leg" type="Bone2D" parent="Skeleton2D/Hip"]
 position = Vector2(16.0002, -6.99982)
 rotation = 0.595394
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 16, -7)
 metadata/_local_pose_override_enabled_ = true
 
@@ -1757,3 +1653,6 @@ position = Vector2(-29, -18)
 
 [node name="Back Foot" type="Node2D" parent="IK Targets"]
 position = Vector2(7, -18)
+
+[connection signal="timeout" from="hair timer" to="." method="_on_hair_timer_timeout"]
+[connection signal="timeout" from="death reset timer" to="." method="_on_death_reset_timer_timeout"]

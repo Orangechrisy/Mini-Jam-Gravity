@@ -9,7 +9,8 @@ var is_being_pulled = false
 var pull_position: Vector2
 var prev_velocity: Vector2
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player: CharacterBody2D = $"."
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hair_timer: Timer = $"hair timer"
 @onready var death_reset_timer: Timer = $"death reset timer"
 
@@ -59,18 +60,20 @@ func _physics_process(delta: float) -> void:
 
 	# flipping
 	if velocity.x > 0:
-		animated_sprite.flip_h = false
+		player.scale.x = 1
+		#animation_player.flip_h = false
 	elif velocity.x < 0:
-		animated_sprite.flip_h = true
+		player.scale.x = -1
+		#animation_player.flip_h = true
 
 	# animes
 	if is_on_floor():
 		if direction == 0:
-			animated_sprite.play("idle")
+			animation_player.play("idle")
 		else:
-			animated_sprite.play("run")
+			animation_player.play("run")
 	else:
-		animated_sprite.play("jump")
+		animation_player.play("jump")
 
 	# left/right movement
 	if not is_being_pulled and is_on_floor():
@@ -85,7 +88,7 @@ func _physics_process(delta: float) -> void:
 	if vel_diff.length() > 250:
 		print("Ouch")
 		is_being_pulled = false
-		animated_sprite.play("die")
+		animation_player.play("die")
 		Engine.time_scale = .25
 		death_reset_timer.start()
 		#for i in get_slide_collision_count():
@@ -103,7 +106,7 @@ func _physics_process(delta: float) -> void:
 func _on_hair_timer_timeout() -> void:
 	print("Ouch")
 	is_being_pulled = false
-	animated_sprite.play("die")
+	animation_player.play("die")
 	Engine.time_scale = .25
 	death_reset_timer.start()
 
