@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfaitk61wsc5w"]
+[gd_scene load_steps=7 format=3 uid="uid://cfaitk61wsc5w"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_0g2ui"]
 [ext_resource type="Shader" path="res://Shaders/button_glow.gdshader" id="2_7ydfa"]
@@ -10,6 +10,11 @@ shader_parameter/replace_color = Color(0.475, 0.086, 9.189, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_merno"]
 texture = ExtResource("3_eotg8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itlso"]
+bg_color = Color(0.0831929, 0.00275952, 0.175518, 1)
+shadow_color = Color(0, 0, 0, 1)
+anti_aliasing = false
 
 [node name="Main Menu" type="CanvasLayer"]
 script = ExtResource("1_0g2ui")
@@ -37,6 +42,9 @@ text = "Start Game"
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_itlso")
+theme_override_styles/hover = SubResource("StyleBoxFlat_itlso")
+theme_override_styles/normal = SubResource("StyleBoxFlat_itlso")
 text = "Quit"
 
 [connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]

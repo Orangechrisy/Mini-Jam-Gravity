@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://lju7a3urcuia"]
+[gd_scene load_steps=11 format=3 uid="uid://lju7a3urcuia"]
 
 [ext_resource type="PackedScene" uid="uid://2dnrqlmk1j8f" path="res://Scenes/player.tscn" id="1_mrh0v"]
 [ext_resource type="Texture2D" uid="uid://b2my18dkp4xv7" path="res://Assets/rain_drop.png" id="2_qexp4"]
 [ext_resource type="Shader" path="res://Shaders/Rain.gdshader" id="2_tm887"]
 [ext_resource type="Texture2D" uid="uid://dea3rygnaj40c" path="res://Assets/Tiles.png" id="3_irkbt"]
 [ext_resource type="PackedScene" uid="uid://dun5cl5p0h4pl" path="res://Scenes/pause_menu.tscn" id="5_bc3xn"]
+[ext_resource type="PackedScene" uid="uid://pml5mgj5uylh" path="res://Scenes/collectable.tscn" id="6_7yxw7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pg40v"]
 shader = ExtResource("2_tm887")
@@ -100,6 +101,8 @@ sources/0 = SubResource("TileSetAtlasSource_uuc8i")
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_mrh0v")]
 position = Vector2(1, -1)
 scale = Vector2(3, 3)
@@ -129,3 +132,18 @@ layer_0/tile_data = PackedInt32Array(-393225, 262144, 4, -327689, 262144, 5, -26
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("5_bc3xn")]
+
+[node name="Collectable" parent="." instance=ExtResource("6_7yxw7")]
+position = Vector2(-173, -129)
+
+[node name="Collectable2" parent="." instance=ExtResource("6_7yxw7")]
+position = Vector2(-277, -183)
+
+[node name="Collectable3" parent="." instance=ExtResource("6_7yxw7")]
+position = Vector2(-244, -34)
+
+[node name="Collectable4" parent="." instance=ExtResource("6_7yxw7")]
+position = Vector2(-403, -235)
+
+[node name="Collectable5" parent="." instance=ExtResource("6_7yxw7")]
+position = Vector2(-105, -1)

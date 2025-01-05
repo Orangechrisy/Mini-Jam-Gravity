@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dun5cl5p0h4pl"]
+[gd_scene load_steps=5 format=3 uid="uid://dun5cl5p0h4pl"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_yjn4a"]
 [ext_resource type="Shader" path="res://Shaders/pause_menu.gdshader" id="2_2was2"]
@@ -6,6 +6,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p61oy"]
 shader = ExtResource("2_2was2")
 shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2m7y"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Pause Menu" type="CanvasLayer"]
 process_mode = 3
@@ -31,6 +34,7 @@ offset_right = 146.5
 offset_bottom = 128.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s2m7y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2

@@ -9,3 +9,5 @@ res://Shaders/button_glow.gdshader
 res://Scripts/pause_menu.gd
 res://Scenes/pause_menu.tscn
 res://Shaders/pause_menu.gdshader
+res://Scripts/collectable.gd
+res://Scenes/collectable.tscn
