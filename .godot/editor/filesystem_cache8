@@ -1,20 +1,27 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736013751
+::res://::1736037014
 icon.svg::CompressedTexture2D::8886225858815929371::1735922605::1735922619::1::::<><>::
-::res://Assets/::1736024729
+::res://Assets/::1736037405
 Buildings.png::CompressedTexture2D::796319747479887420::1735957954::1735957955::1::::<><>::
-button test.png::CompressedTexture2D::2995000273492130140::1736024729::1736024734::1::::<><>::
+button test.png::CompressedTexture2D::2995000273492130140::1736037014::1736037693::1::::<><>::
+Gravity Game Player Sprite Sheet.png::CompressedTexture2D::5277934385475202821::1736037405::1736037693::1::::<><>::
 Player-Sprint-Test.png::CompressedTexture2D::8212683617475740012::1735962778::1735962782::1::::<><>::
 Props-01.png::CompressedTexture2D::140582504503883211::1735957951::1735957951::1::::<><>::
 rain_drop.png::CompressedTexture2D::4307797371817149598::1735968783::1735968791::1::::<><>::
 Tiles.png::CompressedTexture2D::7441749130345555504::1735957941::1735957945::1::::<><>::
-::res://Scenes/::1736022620
-game.tscn::PackedScene::791928209251232000::1736022620::0::1::::<><>::uid://2dnrqlmk1j8f::::res://Scenes/player.tscn<>uid://b2my18dkp4xv7::::res://Assets/rain_drop.png<>res://Shaders/Rain.gdshader<>uid://dea3rygnaj40c::::res://Assets/Tiles.png
-player.tscn::PackedScene::1902112448817473723::1736022620::0::1::::<><>::res://Scripts/player.gd<>uid://dpajx1m7ymfo3::::res://Assets/Player-Sprint-Test.png
-main_menu.tscn::PackedScene::5124305825936558346::1736022620::0::1::::<><>::res://Scripts/main_menu.gd
-::res://Scripts/::1736013809
-player.gd::GDScript::-1::1736013728::0::1::::<>CharacterBody2D<>::
-main_menu.gd::GDScript::-1::1736013809::0::1::::<>CanvasLayer<>::
-::res://Shaders/::1735974947
+::res://Scenes/::1736037405
+game.tscn::PackedScene::791928209251232000::1736036864::0::1::::<><>::uid://2dnrqlmk1j8f::::res://Scenes/player.tscn<>uid://b2my18dkp4xv7::::res://Assets/rain_drop.png<>res://Shaders/Rain.gdshader<>uid://dea3rygnaj40c::::res://Assets/Tiles.png<>uid://dun5cl5p0h4pl::::res://Scenes/pause_menu.tscn<>uid://pml5mgj5uylh::::res://Scenes/collectable.tscn
+player.tscn::PackedScene::1902112448817473723::1736037691::0::1::::<><>::res://Scripts/player.gd<>uid://dpajx1m7ymfo3::::res://Assets/Player-Sprint-Test.png
+main_menu.tscn::PackedScene::5124305825936558346::1736034772::0::1::::<><>::res://Scripts/main_menu.gd<>res://Shaders/button_glow.gdshader<>uid://biw2hm1gth2jw::::res://Assets/button test.png
+pause_menu.tscn::PackedScene::8591701540829764645::1736037014::0::1::::<><>::res://Scripts/pause_menu.gd<>res://Shaders/pause_menu.gdshader
+collectable.tscn::PackedScene::1078327288355632381::1736036641::0::1::::<><>::res://Scripts/collectable.gd<>uid://dyus3u5jrtbgd::::res://icon.svg
+::res://Scripts/::1736037014
+player.gd::GDScript::-1::1736037014::0::1::::<>CharacterBody2D<>::
+main_menu.gd::GDScript::-1::1736037014::0::1::::<>CanvasLayer<>::
+pause_menu.gd::GDScript::-1::1736037014::0::1::::<>CanvasLayer<>::
+collectable.gd::GDScript::-1::1736037014::0::1::::<>Area2D<>::
+::res://Shaders/::1736037405
 Rain.gdshader::Shader::-1::1735974947::0::1::::<><>::
 Rain.tres::VisualShader::6563911602576407859::1735974947::0::1::::<><>::
+button_glow.gdshader::Shader::-1::1736037014::0::1::::<><>::
+pause_menu.gdshader::Shader::-1::1736037014::0::1::::<><>::

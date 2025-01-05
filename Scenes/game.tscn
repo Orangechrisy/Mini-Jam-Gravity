@@ -104,8 +104,8 @@ sources/0 = SubResource("TileSetAtlasSource_uuc8i")
 [node name="GameManager" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_mrh0v")]
-position = Vector2(1, -1)
-scale = Vector2(3, 3)
+position = Vector2(40, 16)
+scale = Vector2(0.1, 0.1)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
